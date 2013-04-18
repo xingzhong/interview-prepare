@@ -1,5 +1,5 @@
 import pdb
-# binary tree 
+# binary tree
 class btree(object):
   def __init__(self, data):
     self.data = data
@@ -33,9 +33,9 @@ class btree(object):
     if node.right:
       self.traverse(node=node.right)
     print "]",
-  
+
   def walk(self, x=None):
-    if not x: 
+    if not x:
       x = self
     if x.left:
       self.walk(x=x.left)
@@ -43,18 +43,28 @@ class btree(object):
     if x.right:
       self.walk(x=x.right)
 
+  def leafs(self):
+    if not (self.left or self.right):
+      return 1
+    num = 0
+    if self.left:
+      num = num + self.left.leafs()
+    if self.right:
+      num = num + self.right.leafs()
+    return num
+
   def max(self):
     if self.right:
       return self.right.max()
     else:
       return self.data
-  
+
   def min(self):
     if self.left:
       return self.left.min()
     else:
       return self.data
-  
+
   def search(self, x):
     if self.data == x:
       return self
@@ -70,7 +80,7 @@ class btree(object):
         return None
 
   def insert(self, data):
-    if data < self.data: 
+    if data < self.data:
       if self.left :
         self.left.insert(data)
       else:
@@ -84,7 +94,7 @@ class btree(object):
   @staticmethod
   def demo():
     from random import randint
-    test = [randint(0,100) for x in range (10)]
+    test = [randint(0,100) for x in range (20)]
     tree = None
     for t in test:
       if tree:
@@ -92,10 +102,11 @@ class btree(object):
       else:
         tree = btree(t)
     return tree
-  
+
 if __name__ == "__main__":
   t = btree.demo()
   t.traverse()
-  print 
+  print
   print t.max()
   print t.min()
+  print t.leafs()
