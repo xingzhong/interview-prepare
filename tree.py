@@ -43,6 +43,17 @@ class btree(object):
     if x.right:
       self.walk(x=x.right)
 
+  def depth(self):
+    if not (self.left or self.right):
+      return 1
+    d1 = 0
+    d2 = 0
+    if self.left:
+      d1 = 1 + self.left.depth()
+    if self.right:
+      d2 = 1 + self.right.depth()
+    return max(d1, d2)
+
   def leafs(self):
     if not (self.left or self.right):
       return 1
@@ -103,6 +114,7 @@ class btree(object):
         tree = btree(t)
     return tree
 
+
 if __name__ == "__main__":
   t = btree.demo()
   t.traverse()
@@ -110,3 +122,4 @@ if __name__ == "__main__":
   print t.max()
   print t.min()
   print t.leafs()
+  print t.depth()
