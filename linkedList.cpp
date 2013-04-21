@@ -19,6 +19,7 @@ int create (IntElement **head, int times) {
 }
 
 int walk (IntElement *head){
+  printf("\nwalk\n");
   while(head){
     printf("%d\n", head->data);
     head = head->next;
@@ -37,11 +38,27 @@ int insert (IntElement **head, int data){
   return 1;
 }
 
+IntElement * reverse(IntElement *curr, IntElement *prev) {
+  IntElement *swap;
+  if (curr->next == NULL){
+    curr->next = prev;
+    return curr;
+  } 
+  else{
+    swap = reverse(curr->next, curr);
+    curr->next = prev;
+    return swap;
+  }
+}
+
 int main(){
   IntElement *list = NULL;
   create(&list, 10);
   walk(list);
   insert(&list, 99);
   walk(list);
+  list = reverse(list, NULL);
+  walk(list);
+
   return 1;
 }
