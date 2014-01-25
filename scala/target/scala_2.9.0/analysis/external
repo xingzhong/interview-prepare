@@ -1,0 +1,4 @@
+#External Dependencies
+#Sat Jan 25 17:06:01 EST 2014
+/Users/xingzhong/Documents/interview/project/boot/scala-2.9.0/lib/scala-library.jar=src/main/scala/com/sirxu/array.scala
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar=src/main/scala/com/sirxu/array.scala

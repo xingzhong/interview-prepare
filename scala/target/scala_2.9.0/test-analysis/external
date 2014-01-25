@@ -1,0 +1,5 @@
+#External Dependencies
+#Sat Jan 25 17:06:03 EST 2014
+/Users/xingzhong/Documents/interview/project/boot/scala-2.9.0/lib/scala-library.jar=src/test/scala/com/sirxu/myArrayTest.scala
+/Users/xingzhong/Documents/interview/lib_managed/scala_2.9.0/test/specs_2.8.0-1.6.5.jar=src/test/scala/com/sirxu/myArrayTest.scala
+/Users/xingzhong/Documents/interview/target/scala_2.9.0/classes/com/sirxu/myString.class=src/test/scala/com/sirxu/myArrayTest.scala
